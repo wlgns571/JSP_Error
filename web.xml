@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+
+	<servlet>
+		<!-- 순서 중요!! -->
+		<servlet-name>anything</servlet-name>
+		<servlet-class>study.Gugudan</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>anything</servlet-name>
+		<url-pattern>/member/*</url-pattern>
+	</servlet-mapping>
+	<!-- URL 패턴 3가지
+		확장자 매핑 : *.wow, do, so
+		경로 매핑 : /member/*
+		절대 매핑 : /member/memberList.wow
+		 -->
+	<!-- 에러페이지 연동 -->
+<!-- 	<error-page> -->
+<!-- 		<exception-type>java.lang.NullPointerException</exception-type> -->
+<!-- 		<location>/WEB-INF/error/errorType.jsp</location> -->
+<!-- 	</error-page> -->
+<!-- 	<error-page> -->
+<!-- 		<exception-type>java.lang.ArrayIndexOutOfBoundsException</exception-type> -->
+<!-- 		<location>/WEB-INF/error/errorType2.jsp</location> -->
+<!-- 	</error-page> -->
+<!-- 	<error-page> -->
+<!-- 		<exception-type>java.lang.SQLException</exception-type> -->
+<!-- 		<location>/WEB-INF/error/errorType3.jsp</location> -->
+<!-- 	</error-page> -->
+
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/error/errorCode404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/WEB-INF/error/errorCode500.jsp</location>
+	</error-page>
+</web-app>
